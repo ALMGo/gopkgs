@@ -5,9 +5,11 @@ import (
 	"time"
 )
 
-const DEFAULT_CHARSET = "abcdefghijklmnopqrstuvwxyz" +
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
-	"0123456789"
+const CapitalLettersCharset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const LowerLettersCharset = "abcdefghijklmnopqrstuvwxyz"
+const NumbersCharset = "0123456789"
+const LettersCharset = CapitalLettersCharset + LowerLettersCharset
+const DefaultCharset = LettersCharset + NumbersCharset
 
 var seededRand *rand.Rand = rand.New(
 	rand.NewSource(time.Now().UnixNano()))
@@ -20,6 +22,6 @@ func RandomStringWithCharset(length int, charset string) string {
 	return string(b)
 }
 
-func RandString(length int) string {
-	return RandomStringWithCharset(length, DEFAULT_CHARSET)
+func RandomString(length int) string {
+	return RandomStringWithCharset(length, DefaultCharset)
 }

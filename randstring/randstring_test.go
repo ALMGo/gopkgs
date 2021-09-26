@@ -5,7 +5,7 @@ import "testing"
 const strLen = 4
 
 func TestRandStringWithCharset(t *testing.T) {
-	str := RandStringWithCharset(strLen, "a")
+	str := RandomStringWithCharset(strLen, "a")
 
 	if len(str) != strLen {
 		t.Fatalf("RandStringWithCharset returns incorrect length string")
@@ -17,7 +17,7 @@ func TestRandStringWithCharset(t *testing.T) {
 }
 
 func TestRandString(t *testing.T) {
-	str := RandString(strLen)
+	str := RandomString(strLen)
 
 	if len(str) != strLen {
 		t.Fatalf("RandString returns incorrect length string")
