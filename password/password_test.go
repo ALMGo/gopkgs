@@ -8,7 +8,6 @@ func TestPasswordsMatch(t *testing.T) {
 	password := "secret"
 	hash, _ := HashPassword(password, 14) // ignore error for the sake of simplicity
 
-
 	match, err := CheckPasswordHash(password, hash)
 
 	if err != nil {
