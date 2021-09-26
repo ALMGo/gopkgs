@@ -12,7 +12,7 @@ const DEFAULT_CHARSET = "abcdefghijklmnopqrstuvwxyz" +
 var seededRand *rand.Rand = rand.New(
 	rand.NewSource(time.Now().UnixNano()))
 
-func RandStringWithCharset(length int, charset string) string {
+func RandomStringWithCharset(length int, charset string) string {
 	b := make([]byte, length)
 	for i := range b {
 		b[i] = charset[seededRand.Intn(len(charset))]
@@ -21,5 +21,5 @@ func RandStringWithCharset(length int, charset string) string {
 }
 
 func RandString(length int) string {
-	return RandStringWithCharset(length, DEFAULT_CHARSET)
+	return RandomStringWithCharset(length, DEFAULT_CHARSET)
 }
